@@ -1,0 +1,51 @@
+/* Mis deficiniones de estilo CSS*/
+/* DEFINICIONES PARA LISTA EN VENTANA 1*/
+.profesionLista{
+	font-size: 13px;
+	margin-top: 10px;
+	color: rgb(255,117,020);
+}
+/* DEFINICIONES PARA DETALLES DE USUARIO EN VENTANA 2*/
+.profesion{
+	font-size: 12px;
+	margin-top: 5px;
+	color: rgb(255,117,020);
+}
+.poblacion{
+	font-size: 12px;
+	margin-top: 5px;
+	color: rgb(255,117,020);
+}
+.edad{
+	font-size: 12px;
+	margin-top: 5px;
+	color: rgb(255,117,020);
+}
+
+.herramientasTic{
+	font-size: 12px;
+	margin-top: 10px;
+	color: rgb(255,117,020);
+}
+
+.correo{
+	font-size: 12px;
+	margin-top: 10px;
+	color: rgb(255,117,020);
+}
+
+.telefono{
+	font-size: 12px;
+	margin-top: 10px;
+	color: rgb(255,117,020);
+}
+
+.imagenLista{
+	margin-top: 5px;
+	margin-left: 5px
+}
+
+.imagen{
+	margin-top: 15px;
+	margin-left: 10px;
+}
