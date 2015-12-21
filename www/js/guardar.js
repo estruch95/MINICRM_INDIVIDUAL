@@ -7,11 +7,12 @@
 	var edad = "";
 	var telefono = "";
 	var poblacion = "";
+	var ultimos = "";
 
 	function insertarDatos(tx){
 		//INSERCIÓN DE VALORES
-		var sql = "INSERT INTO localDB(nombre, apellidos, cargo, email, edad, telefono, poblacion)"+ 
-				  "VALUES('"+nombre+"', '"+apellidos+"', '"+cargo+"', '"+email+"', "+edad+", '"+telefono+"', '"+poblacion+"');";
+		var sql = "INSERT INTO localDB(nombre, apellidos, cargo, email, edad, telefono, poblacion, ultimos)"+ 
+				  "VALUES('"+nombre+"', '"+apellidos+"', '"+cargo+"', '"+email+"', "+edad+", '"+telefono+"', '"+poblacion+"', "+ultimos+");";
 		//EJECUTAMOS LA SENTENCIA SQL
 		tx.executeSql(sql);
 		console.log("ROW INSERT: "+sql);
@@ -31,6 +32,7 @@
 		edad = $("#fedad").val();
 		telefono = $("#ftelefono").val();
 		poblacion = $("#fpoblacion").val();
+		//ultimos = $("#fultimos").val();
 
 		//COMPROBACIÓN DE LOS DATOS CAPTURADOS DEL FORMULARIO
 		console.log("Nombre: "+nombre);
@@ -40,6 +42,7 @@
 		console.log("Edad: "+edad);
 		console.log("Telefono: "+telefono);
 		console.log("Poblacion: "+poblacion);
+		console.log("Ultimos: "+ultimos);
 
 		//CONEXIÓN CON BBDD
 		db = window.openDatabase("localDB", "1.0", "Base de datos de prueba", 2*1024*1024);

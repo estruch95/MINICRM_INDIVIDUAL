@@ -101,30 +101,31 @@ var confDB = {
                   "email        VARCHAR(250)    not null,"+
                   "edad         INTEGER         not null,"+
                   "telefono     VARCHAR(250)    not null,"+
-                  "poblacion    VARCHAR(250)    not null );";
+                  "poblacion    VARCHAR(250)    not null,"+
+                  "ultimos      INTEGER(1)      not null);";
             ;
             tx.executeSql(sql);
             console.log("TABLA CREADA CORRECTAMENTE");
 
             //Inserción de datos en la tabla creada anteriormente
-            sql = "INSERT INTO localDB(id, nombre, apellidos, cargo, email, edad, telefono, poblacion)"+
-                  "VALUES(1, 'Ivan', 'Estruch', 'Alumno', 'estruch95.b@gmail.com', 20, '695391923', 'Benifaio');";
+            sql = "INSERT INTO localDB(id, nombre, apellidos, cargo, email, edad, telefono, poblacion, ultimos)"+
+                  "VALUES(1, 'Ivan', 'Estruch', 'Alumno', 'estruch95.b@gmail.com', 20, '695391923', 'Benifaio', 0);";
             tx.executeSql(sql);
 
-            sql = "INSERT INTO localDB(id, nombre, apellidos, cargo, email, edad, telefono, poblacion)"+
-                  "VALUES(2, 'Joaquin', 'Bahamonde', 'Alumno', 'joaco17@gmail.com', 20, '657345698', 'Catarroja');";
+            sql = "INSERT INTO localDB(id, nombre, apellidos, cargo, email, edad, telefono, poblacion, ultimos)"+
+                  "VALUES(2, 'Joaquin', 'Bahamonde', 'Alumno', 'joaco17@gmail.com', 20, '657345698', 'Catarroja', 1);";
             tx.executeSql(sql);
 
-            sql = "INSERT INTO localDB(id, nombre, apellidos, cargo, email, edad, telefono, poblacion)"+
-                  "VALUES(3, 'Jose', 'Igualada', 'Alumno', 'igualada94@hotmail.com', 21, '637567834', 'Torrent');";
+            sql = "INSERT INTO localDB(id, nombre, apellidos, cargo, email, edad, telefono, poblacion, ultimos)"+
+                  "VALUES(3, 'Jose', 'Igualada', 'Alumno', 'igualada94@hotmail.com', 21, '637567834', 'Torrent', 0);";
             tx.executeSql(sql);
 
-            sql = "INSERT INTO localDB(id, nombre, apellidos, cargo, email, edad, telefono, poblacion)"+
-                  "VALUES(4, 'Adrian', 'Rodriguez', 'Alumno', 'rodri@hotmail.es', 22, '435678998', 'Albal');";
+            sql = "INSERT INTO localDB(id, nombre, apellidos, cargo, email, edad, telefono, poblacion, ultimos)"+
+                  "VALUES(4, 'Adrian', 'Rodriguez', 'Alumno', 'rodri@hotmail.es', 22, '435678998', 'Albal', 1);";
             tx.executeSql(sql);
 
-            sql = "INSERT INTO localDB(id, nombre, apellidos, cargo, email, edad, telefono, poblacion)"+
-                  "VALUES(5, 'Silvia', 'Reolid', 'Alumno', 'silreolid@gmail.es', 25, '961782345', 'Valencia');";
+            sql = "INSERT INTO localDB(id, nombre, apellidos, cargo, email, edad, telefono, poblacion, ultimos)"+
+                  "VALUES(5, 'Silvia', 'Reolid', 'Alumno', 'silreolid@gmail.es', 25, '961782345', 'Valencia', 0);";
             tx.executeSql(sql);
             console.log("INSERCION DE DATOS REALIZADA CORRECTAMENTE");
     },
