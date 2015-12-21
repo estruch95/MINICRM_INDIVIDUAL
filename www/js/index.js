@@ -31,7 +31,8 @@ var cargarDB = {
     },
 
     mostrarDB: function(tx){
-        var sql = "SELECT * FROM localDB;";
+        //Implementación de PASO 4
+        var sql = "SELECT * FROM localDB ORDER BY ultimos DESC;";
         console.log("LANZAMOS LA CONSULTA SQL PARA CARGAR LA TABLA CORRESPONDIENTE");
         tx.executeSql(
             sql,
