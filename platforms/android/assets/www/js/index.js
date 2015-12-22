@@ -31,7 +31,7 @@ var cargarDB = {
     },
 
     mostrarDB: function(tx){
-        //Implementación de PASO 4
+        //IMPLEMENTACIÓN DE PASO 4 (ORDER BY) EN LA CONSULTA
         var sql = "SELECT * FROM localDB ORDER BY ultimos DESC;";
         console.log("LANZAMOS LA CONSULTA SQL PARA CARGAR LA TABLA CORRESPONDIENTE");
         tx.executeSql(
@@ -46,7 +46,15 @@ var cargarDB = {
                         //Aquí actualizaría mi html automáticamente para cargar datos de la BBDD
                         console.log("ROW "+i+" nombre: "+fila.nombre);
                         //RECUPERACIÓN DE DATOS
-                        $("#listaContactos ul").append("<li><a href='./alumnos/alumno.html' data-ajax='false'><img src='./img/user.png' class='imagenLista'><div class='nombreLista' id='nombreUsuario'>"+fila.nombre+" "+fila.apellidos+"</div><div class='profesionLista'>"+fila.cargo+"</div></a></li>").listview('refresh');
+                        $("#listaContactos ul").append("<li><a data-id='"+fila.id+"' href='./alumnos/alumno.html' data-ajax='false'><img src='./img/user.png' class='imagenLista'><div class='nombreLista' id='nombreUsuario'>"+fila.nombre+" "+fila.apellidos+"</div><div class='profesionLista'>"+fila.cargo+"</div></a></li>").listview('refresh');
+                        //Capturamos el click de la selección en la lista
+                        $("#listaContactos a").click(function(e){
+                            e.preventDefault();
+                            var id = $(this).attr("data-id");
+                            window.localStorage.setItem("id", id);
+                            var href = $(this).attr("href");
+                            document.location.href = href;
+                        });
                     }
                 }
             },
@@ -109,7 +117,7 @@ var confDB = {
             console.log("TABLA CREADA CORRECTAMENTE");
 
             //Inserción de datos en la tabla creada anteriormente
-            //Paso 3 implementado aquí
+            //Paso 3 IMPLEMENTADO AQUÍ
             sql = "INSERT INTO localDB(id, nombre, apellidos, cargo, email, edad, telefono, poblacion, ultimos)"+
                   "VALUES(1, 'Ivan', 'Estruch', 'Alumno', 'estruch95.b@gmail.com', 20, '695391923', 'Benifaio', 0);";
             tx.executeSql(sql);

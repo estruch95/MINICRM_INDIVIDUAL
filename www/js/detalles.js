@@ -1,5 +1,6 @@
 var cargarDetalles = {
     db: "",
+
     initialize: function(){
         //GENERAMOS LA BBDD
         this.db = window.openDatabase("localDB", "1.0", "Base de datos de prueba", 2*1024*1024);
@@ -11,9 +12,11 @@ var cargarDetalles = {
         //Transacción
         this.db.transaction(this.cargarDetalles, this.mostrarDBError);
     },
-
+    
     cargarDetalles: function(tx){
-        var sql = "SELECT * FROM localDB WHERE nombre = 'Ivan';";
+        //PASO 5 IMPLEMENTADO AQUÍ
+        var id = window.localStorage.getItem("id");
+        var sql = "SELECT * FROM localDB WHERE id = "+id+";";
         console.log("LANZAMOS LA CONSULTA SQL DE DETALLES");
         tx.executeSql(
             sql,
