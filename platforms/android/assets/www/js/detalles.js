@@ -14,6 +14,7 @@ var cargarDetalles = {
     },
     
     cargarDetalles: function(tx){
+        //PASO 5 IMPLEMENTADO AQUÍ
         var id = window.localStorage.getItem("id");
         var sql = "SELECT * FROM localDB WHERE id = "+id+";";
         console.log("LANZAMOS LA CONSULTA SQL DE DETALLES");
