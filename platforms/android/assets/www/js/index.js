@@ -31,7 +31,8 @@ var cargarDB = {
     },
 
     mostrarDB: function(tx){
-        var sql = "SELECT * FROM localDB;";
+        //Implementación de PASO 4
+        var sql = "SELECT * FROM localDB ORDER BY ultimos DESC;";
         console.log("LANZAMOS LA CONSULTA SQL PARA CARGAR LA TABLA CORRESPONDIENTE");
         tx.executeSql(
             sql,
@@ -108,6 +109,7 @@ var confDB = {
             console.log("TABLA CREADA CORRECTAMENTE");
 
             //Inserción de datos en la tabla creada anteriormente
+            //Paso 3 implementado aquí
             sql = "INSERT INTO localDB(id, nombre, apellidos, cargo, email, edad, telefono, poblacion, ultimos)"+
                   "VALUES(1, 'Ivan', 'Estruch', 'Alumno', 'estruch95.b@gmail.com', 20, '695391923', 'Benifaio', 0);";
             tx.executeSql(sql);
